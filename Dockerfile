@@ -4,6 +4,7 @@ MAINTAINER alex@sidigital.co
 USER root
 RUN apt-get --yes --force-yes update \
     && apt-get install --yes --force-yes curl \
+    && apt-get install bzip2 \
     && echo "deb http://packages.dotdeb.org jessie all" > /etc/apt/sources.list.d/dotdeb.list \
     && curl -sS https://www.dotdeb.org/dotdeb.gpg | apt-key add - \
     && apt-get update -qq -y \
