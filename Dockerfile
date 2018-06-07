@@ -16,4 +16,5 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
   apt-get install -y nodejs git &&\
   npm install -g bower &&\
   npm install -g gulp &&\
+  npm install -g sass &&\
   npm install -g serverless
