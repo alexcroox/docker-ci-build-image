@@ -14,6 +14,7 @@ RUN apt-get --yes --force-yes update \
 # Install Node.js
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
   apt-get install -y nodejs git &&\
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash &&\
   npm install -g bower &&\
   npm install -g gulp &&\
   npm install -g sass &&\
