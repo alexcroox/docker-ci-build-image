@@ -9,13 +9,17 @@ RUN apt-get --yes --force-yes update \
     && curl -sS https://www.dotdeb.org/dotdeb.gpg | apt-key add - \
     && apt-get update -qq -y \
     && apt-get --yes --force-yes install php7.0-cli php7.0-apcu php7.0-apcu-bc php7.0-curl php7.0-json php7.0-mcrypt php7.0-opcache php7.0-readline php7.0-mysql php7.0-xml php7.0-zip php7.0-mbstring php7.0-gd php7.0-intl \
-    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
+    && curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+# Set nvm directory
+ENV NVM_DIR /root/.nvm
 
 # Install Node.js
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
-  apt-get install -y nodejs git &&\
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash &&\
-  npm install -g bower &&\
-  npm install -g gulp &&\
-  npm install -g sass &&\
-  npm install -g serverless
+    apt-get install -y nodejs git &&\
+    . $NVM_DIR/nvm.sh &&\
+    npm install -g bower &&\
+    npm install -g gulp &&\
+    npm install -g sass &&\
+    npm install -g serverless
