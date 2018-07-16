@@ -19,4 +19,5 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - &&\
     npm install -g gulp &&\
     npm install -g sass &&\
     npm install -g serverless &&\
+    npm install -g aws-sdk &&\
     npm install -g stylus
