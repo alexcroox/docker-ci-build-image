@@ -12,6 +12,7 @@ RUN apt-get --yes --force-yes update \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && apt-get install --yes --force-yes python3 \
     && apt-get install python3-pip --yes --force-yes \
+    && apt-get install libyaml-dev --yes --force-yes \
     && pip3 install awscli --upgrade --user
 
 # Install Node.js
