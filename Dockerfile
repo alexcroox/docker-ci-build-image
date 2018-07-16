@@ -13,7 +13,7 @@ RUN apt-get --yes --force-yes update \
     && apt-get install --yes --force-yes python3 \
     && apt-get install python3-pip --yes --force-yes \
     && apt-get install libyaml-dev --yes --force-yes \
-    && pip3 install awscli --upgrade --user
+    && pip3 install awscli --upgrade
 
 # Install Node.js
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - &&\
